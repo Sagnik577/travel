@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change</title>
+</head>
+
+<body bgcolor="cyan" style="text-align: center;">
+
+
+    <h1>Change Password</h1>
+
+    <form action="change" method="POST">
+
+        {% csrf_token %}
+
+       
+        <input type="text" name="username" placeholder="Username" autocomplete="off"><br><br>
+        <input type="email" name="email" placeholder="Email" autocomplete="off"><br><br>
+        <input type="password" name="password1" placeholder="Password" autocomplete="off"><br><br>
+        <input type="password" name="password2" placeholder="Confirm Password" autocomplete="off"><br><br>
+        <button type="submit">Submit</button>
+
+    </form>
+    {%for message in messages%}
+    <h4 style="text-align: left;">{{message}}</h4>
+    {% endfor%}
+</body>
+
+</html>

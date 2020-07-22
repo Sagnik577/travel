@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body bgcolor="cyan" style="text-align: center;">
+
+
+    <h1>Login</h1>
+
+    <form action="login" method="POST">
+
+        {% csrf_token %}
+
+        
+         <input type="text" name="username" placeholder="Username" autocomplete="off"><br><br>
+        
+        <input type="password" name="password" placeholder="Password" autocomplete="off"><br><br>
+        
+        <button type="submit">Login</button>
+
+    </form>
+
+    {%for message in messages%}
+    <h4 style="display:inline; text-align: left;">{{message}}</h4>
+    {% endfor%}
+
+    <h4 style="text-decoration: underline; text-align:right;"><a href="accounts/change">Forgot Password</a></h4>
+
+</body>
+
+</html>
